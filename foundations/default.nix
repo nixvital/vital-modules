@@ -111,4 +111,15 @@
     "bashrc.local".source = ../data/dotfiles/bashrc.local;
     "inputrc".source = ../data/dotfiles/inputrc;
   };
+
+  # +------------------------------------------------------------+
+  # | Enable Flakes                                              |
+  # +------------------------------------------------------------+
+
+  nix = {
+    package = pkgs.nixFlakes;
+    extraOptions = ''
+        experimental-features = nix-command flakes
+      '';
+  };
 }
