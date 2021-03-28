@@ -37,7 +37,7 @@
     pciutils usbutils mkpasswd nixops remmina p7zip unzip
     arandr neofetch ffmpeg zstd tmux fd inetutils file gnupg
     # ---------- Development ----------
-    git gnumake binutils gcc silver-searcher
+    git gnumake gcc silver-searcher
   ] ++ lib.optionals config.vital.graphical.enable [
     zoom-us thunderbird firefox
   ];
