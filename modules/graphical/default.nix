@@ -32,10 +32,18 @@ in {
     xserver = lib.mkOption {
       description = "Wrapper of xserver related configuration.";
       type = types.submodule xserverOptions;
+      default = {
+        displayManager = "gdm";
+        dpi = null;
+        useCapsAsCtrl = false;
+      };
     };
   };
 
   config = lib.mkIf cfg.enable {
+    # Enable unfree as it can potentially use Nvidia drivers.
+    nixpkgs.config.allowUnfree = true;
+    
     environment.systemPackages = with pkgs; [
       # Multimedia
       audacious audacity zoom-us thunderbird
