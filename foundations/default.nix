@@ -10,6 +10,7 @@
   #   ];
 
   imports = [
+    ../modules/users
     ../modules/graphical
   ];
 

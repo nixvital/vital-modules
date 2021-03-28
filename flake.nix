@@ -20,8 +20,10 @@
       # Import this so that you have a backbone that you can build
       # your machine up on.
       foundation = withVitalpkgs (import ./foundations);
+      
       # Individual Modules
       graphical = import ./modules/graphical;
+      users = import ./modules/users;
       docker = import ./modules/docker.nix;
     };
 
