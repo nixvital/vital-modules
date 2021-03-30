@@ -25,6 +25,7 @@
       graphical = import ./modules/graphical;
       users = import ./modules/users;
       docker = import ./modules/docker.nix;
+      steam = import ./modules/games/steam.nix;
     };
 
     nixosConfigurations.test-vm = nixpkgs.lib.nixosSystem {
