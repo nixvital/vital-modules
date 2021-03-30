@@ -5,3 +5,4 @@ A collection of NixOS modules serving as building blocks to construct NixOS conf
 
 1. Add a check action to this flake
 2. Migrate the other services
+3. Make default installed software list really minimal, and the user can choose the `level` of heaviness
