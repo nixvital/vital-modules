@@ -31,15 +31,13 @@
 
   # Basic softwares that should definitely exist.
   environment.systemPackages = with pkgs; [
-    wget vim pinentry dmenu
+    wget pinentry dmenu
     # ---------- System Utils ----------
     rsync pciutils usbutils mkpasswd
-    pciutils usbutils mkpasswd nixops remmina p7zip unzip
-    arandr neofetch ffmpeg zstd tmux fd inetutils file gnupg
-    # ---------- Development ----------
-    git gnumake gcc silver-searcher
+    pciutils usbutils mkpasswd 
+    neofetch tmux fd inetutils file gnupg
   ] ++ lib.optionals config.vital.graphical.enable [
-    zoom-us thunderbird firefox
+    firefox
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
