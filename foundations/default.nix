@@ -13,6 +13,7 @@
     ../modules/users
     ../modules/graphical
     ../modules/games/steam.nix
+    ../modules/pre-installed.nix
   ];
 
   # +------------------------------------------------------------+
@@ -29,17 +30,6 @@
   # +------------------------------------------------------------+
   # | Default Settings                                           |
   # +------------------------------------------------------------+
-
-  # Basic softwares that should definitely exist.
-  environment.systemPackages = with pkgs; [
-    wget pinentry dmenu
-    # ---------- System Utils ----------
-    rsync pciutils usbutils mkpasswd
-    pciutils usbutils mkpasswd 
-    neofetch tmux fd inetutils file gnupg
-  ] ++ lib.optionals config.vital.graphical.enable [
-    firefox
-  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
