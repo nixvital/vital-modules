@@ -34,7 +34,6 @@ let add = level: pkg: {
       (addGraphicalOnly 4 dmenu)
       (addGraphicalOnly 4 firefox)
       (addGraphicalOnly 4 arandr)
-      (addGraphicalOnly 4 xrandr)
       (add 4 emacs)
       (add 4 vim)
       (add 4 git)
