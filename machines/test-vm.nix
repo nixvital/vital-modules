@@ -5,6 +5,7 @@
     ../foundations
     ../modules/addons/docker.nix
     ../modules/addons/laptop-lids.nix
+    ../modules/addons/iphone-connect.nix
   ];
 
   config = {

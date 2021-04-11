@@ -29,6 +29,7 @@
       # - Add-on modules
       docker = import ./modules/addons/docker.nix;
       laptop-lids = import ./modules/addons/laptop-lids.nix;
+      iphone-connect = import ./modules/addons/iphone-connect.nix;
     };
 
     nixosConfigurations.test-vm = nixpkgs.lib.nixosSystem {
