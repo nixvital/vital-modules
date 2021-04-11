@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
-let my_steam = pkgs.steam.override {
+let cfg = config.vital.games.steam;
+
+    customized-steam = pkgs.steam.override {
       # Use nixos libraries instead of steam-provided
       withJava = true;
       # TODO(breakds): Figure out what are the actual necessary libraries.
@@ -43,26 +45,33 @@ let my_steam = pkgs.steam.override {
         ] ++ xorgdeps;
     };
 in {
-  nixpkgs.config.allowBroken = true;
+  options.vital.games.steam = {
+    enable = lib.mkEnableOption "Enable Steam for Gaming";
+  };
 
-  # https://github.com/NixOS/nixpkgs/issues/45492#issuecomment-418903252
-  # Set limits for esync.
-  systemd.extraConfig = "DefaultLimitNOFILE=1048576";
+  config = lib.mkIf cfg.enable {
+    
+    nixpkgs.config.allowBroken = true;
 
-  security.pam.loginLimits = [{
-    domain = "*";
-    type = "hard";
-    item = "nofile";
-    value = "1048576";
-  }];
-  
-  environment.systemPackages = with pkgs; [
-    wine
-    my_steam
-    my_steam.run
-    obs-studio
-    imagemagick
-  ];
+    # https://github.com/NixOS/nixpkgs/issues/45492#issuecomment-418903252
+    # Set limits for esync.
+    systemd.extraConfig = "DefaultLimitNOFILE=1048576";
 
-  hardware.opengl.driSupport32Bit = true;
+    security.pam.loginLimits = [{
+      domain = "*";
+      type = "hard";
+      item = "nofile";
+      value = "1048576";
+    }];
+    
+    environment.systemPackages = with pkgs; [
+      wine
+      customized-steam
+      customized-steam.run
+      obs-studio
+      imagemagick
+    ];
+
+    hardware.opengl.driSupport32Bit = true;
+  };
 }

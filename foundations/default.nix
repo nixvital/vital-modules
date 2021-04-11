@@ -12,6 +12,7 @@
   imports = [
     ../modules/users
     ../modules/graphical
+    ../modules/games/steam.nix
   ];
 
   # +------------------------------------------------------------+
