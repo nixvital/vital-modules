@@ -24,8 +24,10 @@
       # Individual Modules
       graphical = import ./modules/graphical;
       users = import ./modules/users;
-      docker = import ./modules/docker.nix;
       steam = import ./modules/games/steam.nix;
+
+      # - Add-on modules
+      docker = import ./modules/addons/docker.nix;
     };
 
     nixosConfigurations.test-vm = nixpkgs.lib.nixosSystem {
