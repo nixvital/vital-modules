@@ -14,6 +14,7 @@
     ../modules/graphical
     ../modules/games/steam.nix
     ../modules/pre-installed.nix
+    ../modules/vm.nix
   ];
 
   # +------------------------------------------------------------+
