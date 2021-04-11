@@ -3,6 +3,8 @@
 {
   imports = [
     ../foundations
+    ../modules/addons/docker.nix
+    ../modules/addons/laptop-lids.nix
   ];
 
   config = {

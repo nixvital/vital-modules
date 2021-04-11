@@ -28,6 +28,7 @@
 
       # - Add-on modules
       docker = import ./modules/addons/docker.nix;
+      laptop-lids = import ./modules/addons/laptop-lids.nix;
     };
 
     nixosConfigurations.test-vm = nixpkgs.lib.nixosSystem {
