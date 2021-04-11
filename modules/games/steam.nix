@@ -70,6 +70,7 @@ in {
       customized-steam.run
       obs-studio
       imagemagick
+      steam-run-native
     ];
 
     hardware.opengl.driSupport32Bit = true;
