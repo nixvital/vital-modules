@@ -15,6 +15,7 @@
     ../modules/games/steam.nix
     ../modules/pre-installed.nix
     ../modules/vm.nix
+    ../modules/dev/vscode.nix
   ];
 
   # +------------------------------------------------------------+

@@ -15,6 +15,8 @@
     vital.pre-installed.level = 5;
     
     vital.games.steam.enable = true;
+
+    vital.programs.vscode.enable = true;
     
     networking.hostName = "testvm";
     networking.hostId = "4ca9a368";
