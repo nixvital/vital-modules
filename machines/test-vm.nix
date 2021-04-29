@@ -11,6 +11,7 @@
   config = {
     vital.mainUser = "tester";
     vital.graphical.enable = true;
+    vital.graphical.remote-desktop.enable = true;
 
     vital.pre-installed.level = 5;
     
