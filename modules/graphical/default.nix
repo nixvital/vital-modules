@@ -27,6 +27,10 @@ let cfg = config.vital.graphical;
     };
 
 in {
+  imports = [
+    ./nvidia.nix
+  ];
+  
   options.vital.graphical = {
     enable = lib.mkEnableOption "Enable Graphical UI (xserver and friends)";
     xserver = lib.mkOption {
