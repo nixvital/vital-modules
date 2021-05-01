@@ -2,6 +2,17 @@
 
 let cfg = config.vital.services.chia-blockchain;
 
+    containerName = "chiabox";
+
+    chiafunc = pkgs.writeShellScriptBin "chiafunc" ''
+      state=$(docker inspect -f "{{.State.Status}}" ${containerName})
+      if [ $state != "running" ]; then
+        echo "Please make sure that the chia docker container is running."
+        exit -1
+      fi
+      docker exec -it ${containerName} vene/bin/chia $@
+    '';
+
 in {
   options.vital.services.chia-blockchain = with lib; {
     enable = mkEnableOption "Enable this to start a chia-network node in docker";
@@ -29,6 +40,17 @@ in {
       default = "";
       example = "/opt/chia/plots";
     };
+
+    dotchiaDirectory = mkOption {
+      type = lib.types.str;
+      description = ''
+        Specify the path to the directory that saves the state of chia.
+        
+        This will be mount to /root/.chia inside the docker container.
+      '';
+      default = "";
+      example = "/opt/chia/dotchia";
+    };
   };
   
   config = lib.mkIf cfg.enable {
@@ -39,10 +61,13 @@ in {
       }
     ];
 
-    virtualisation.oci-containers.containers."chiabox" = {
+    virtualisation.oci-containers.containers."${containerName}" = {
       image = "ghcr.io/chia-network/chia:1.1.2";
       volumes = (lib.optionals (cfg.plotsDirectory != "") [ "${cfg.plotsDirectory}:/plots" ]) ++
-                (lib.optionals (cfg.plottingDirectory != "") [ "${cfg.plottingDirectory}:/plotting" ]);
+                (lib.optionals (cfg.plottingDirectory != "") [ "${cfg.plottingDirectory}:/plotting" ]) ++
+                (lib.optionals (cfg.dotchiaDirectory != "") [ "${cfg.dotchiaDirectory}:/root/.chia" ]);
     };
+
+    environment.systemPackages = [ chiafunc ];
   };
 }
