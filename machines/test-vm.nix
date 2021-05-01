@@ -30,6 +30,12 @@
       enable = true;
       domain = "filerun.example.com";
     };
+
+    vital.services.gitea = {
+      enable = true;
+      domain = "gitea.example.com";
+      port = 5965;
+    };
     
     networking.hostName = "testvm";
     networking.hostId = "4ca9a368";
