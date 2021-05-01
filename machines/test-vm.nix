@@ -36,6 +36,10 @@
       domain = "gitea.example.com";
       port = 5965;
     };
+
+    vital.services.chia-blockchain = {
+      enable = true;
+    };
     
     networking.hostName = "testvm";
     networking.hostId = "4ca9a368";

@@ -21,6 +21,7 @@
     ../modules/services/docker-registry.nix
     ../modules/services/filerun.nix
     ../modules/services/gitea.nix
+    ../modules/services/chia-blockchain.nix
   ];
 
   # +------------------------------------------------------------+
