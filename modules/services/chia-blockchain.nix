@@ -69,5 +69,7 @@ in {
     };
 
     environment.systemPackages = [ chiafunc ];
+
+    networking.firewall.allowedTCPPorts = [ 8444 ];
   };
 }
