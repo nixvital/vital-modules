@@ -10,7 +10,7 @@ let cfg = config.vital.services.chia-blockchain;
         echo "Please make sure that the chia docker container is running."
         exit -1
       fi
-      docker exec -it ${containerName} vene/bin/chia $@
+      docker exec -it ${containerName} venv/bin/chia $@
     '';
 
 in {
