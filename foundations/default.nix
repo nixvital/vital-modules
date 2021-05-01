@@ -18,7 +18,7 @@
     ../modules/dev/vscode.nix
     
     # (nixvital wrapped) Services
-    ../modules/services/docker-register.nix
+    ../modules/services/docker-registry.nix
     ../modules/services/filerun.nix
     ../modules/services/gitea.nix
   ];
