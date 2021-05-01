@@ -18,6 +18,14 @@
     vital.games.steam.enable = true;
 
     vital.programs.vscode.enable = true;
+
+    services.nginx.enable = true;
+    security.acme = {
+      acceptTerms = true;
+      email = "sample@example.com";
+    };
+
+    vital.services.docker-registry.enable = true;
     
     networking.hostName = "testvm";
     networking.hostId = "4ca9a368";

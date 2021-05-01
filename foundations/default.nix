@@ -16,6 +16,9 @@
     ../modules/pre-installed.nix
     ../modules/vm.nix
     ../modules/dev/vscode.nix
+    
+    # (nixvital wrapped) Services
+    ../modules/services/docker-register.nix
   ];
 
   # +------------------------------------------------------------+
