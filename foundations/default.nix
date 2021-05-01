@@ -19,6 +19,7 @@
     
     # (nixvital wrapped) Services
     ../modules/services/docker-register.nix
+    ../modules/services/filerun.nix
   ];
 
   # +------------------------------------------------------------+

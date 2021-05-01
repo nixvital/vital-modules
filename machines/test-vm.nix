@@ -26,6 +26,10 @@
     };
 
     vital.services.docker-registry.enable = true;
+    vital.services.filerun = {
+      enable = true;
+      domain = "filerun.example.com";
+    };
     
     networking.hostName = "testvm";
     networking.hostId = "4ca9a368";
