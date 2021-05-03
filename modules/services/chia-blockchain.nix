@@ -62,10 +62,14 @@ in {
     ];
 
     virtualisation.oci-containers.containers."${containerName}" = {
-      image = "ghcr.io/chia-network/chia:1.1.2";
+      image = "ghcr.io/chia-network/chia:1.1.3";
       volumes = (lib.optionals (cfg.plotsDirectory != "") [ "${cfg.plotsDirectory}:/plots" ]) ++
                 (lib.optionals (cfg.plottingDirectory != "") [ "${cfg.plottingDirectory}:/plotting" ]) ++
                 (lib.optionals (cfg.dotchiaDirectory != "") [ "${cfg.dotchiaDirectory}:/root/.chia" ]);
+      environment = {
+        "keys" = "";  # Skip generating keys on startup
+        "plots_dir" = "/plots";
+      };
     };
 
     environment.systemPackages = [ chiafunc ];
