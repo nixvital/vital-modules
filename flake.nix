@@ -5,7 +5,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-20.09";
     
     # Use vitalpkgs, with the same nixpkgs
-    vitalpkgs.url = "github:nixvital/vitalpkgs?rev=10c927df697df54b428f688227e0ff1dd8f027d1";
+    vitalpkgs.url = "github:nixvital/vitalpkgs?rev=524a2d704054fa04abcc12705c2b54a71a2a89ff";
     vitalpkgs.inputs.nixpkgs.follows = "nixpkgs";
   };
 
