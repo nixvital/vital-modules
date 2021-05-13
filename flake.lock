@@ -45,17 +45,17 @@
         ]
       },
       "locked": {
-        "lastModified": 1620942267,
-        "narHash": "sha256-GWmQfSnw27dGj9VEXg3g8IvXoK9KKCDeMjFb+tIXHIw=",
+        "lastModified": 1620944976,
+        "narHash": "sha256-nAtjhT7Pt+Qv1jvlccCGuxzGKJ+mXBOBJyPxFtlXTns=",
         "owner": "nixvital",
         "repo": "vitalpkgs",
-        "rev": "524a2d704054fa04abcc12705c2b54a71a2a89ff",
+        "rev": "315fc6bd22ee01df568cf411bc64b90370dd15ea",
         "type": "github"
       },
       "original": {
         "owner": "nixvital",
         "repo": "vitalpkgs",
-        "rev": "524a2d704054fa04abcc12705c2b54a71a2a89ff",
+        "rev": "315fc6bd22ee01df568cf411bc64b90370dd15ea",
         "type": "github"
       }
     }
