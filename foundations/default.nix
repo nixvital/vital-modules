@@ -22,6 +22,7 @@
     ../modules/services/filerun.nix
     ../modules/services/gitea.nix
     ../modules/services/chia-blockchain.nix
+    ../modules/services/chiafan-workforce.nix
   ];
 
   # +------------------------------------------------------------+

@@ -6,7 +6,7 @@ let cfg = config.vital.services.chia-blockchain;
 
     chiafunc = pkgs.writeShellScriptBin "chiafunc" ''
       state=$(docker inspect -f "{{.State.Status}}" ${containerName})
-      if [ $state != "running" ]; then
+      if [ "$state" != "running" ]; then
         echo "Please make sure that the chia docker container is running."
         exit -1
       fi
@@ -62,7 +62,7 @@ in {
     ];
 
     virtualisation.oci-containers.containers."${containerName}" = {
-      image = "ghcr.io/chia-network/chia:1.1.3";
+      image = "ghcr.io/chia-network/chia:latest";
       volumes = (lib.optionals (cfg.plotsDirectory != "") [ "${cfg.plotsDirectory}:/plots" ]) ++
                 (lib.optionals (cfg.plottingDirectory != "") [ "${cfg.plottingDirectory}:/plotting" ]) ++
                 (lib.optionals (cfg.dotchiaDirectory != "") [ "${cfg.dotchiaDirectory}:/root/.chia" ]);
