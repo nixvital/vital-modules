@@ -66,6 +66,9 @@ in {
       volumes = (lib.optionals (cfg.plotsDirectory != "") [ "${cfg.plotsDirectory}:/plots" ]) ++
                 (lib.optionals (cfg.plottingDirectory != "") [ "${cfg.plottingDirectory}:/plotting" ]) ++
                 (lib.optionals (cfg.dotchiaDirectory != "") [ "${cfg.dotchiaDirectory}:/root/.chia" ]);
+      ports = [
+        "8447:8447"
+      ];
       environment = {
         "keys" = "";  # Skip generating keys on startup
         "plots_dir" = "/plots";
@@ -74,6 +77,6 @@ in {
 
     environment.systemPackages = [ chiafunc ];
 
-    networking.firewall.allowedTCPPorts = [ 8444 ];
+    networking.firewall.allowedTCPPorts = [ 8444 8447 ];
   };
 }
