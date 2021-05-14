@@ -23,6 +23,7 @@
     ../modules/services/gitea.nix
     ../modules/services/chia-blockchain.nix
     ../modules/services/chiafan-workforce.nix
+    ../modules/services/chiafan-monitor.nix
   ];
 
   # +------------------------------------------------------------+
