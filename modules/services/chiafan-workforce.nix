@@ -39,6 +39,20 @@ in {
         "/plotting/P02:/plots/F02"
       ];
     };
+
+    port = lib.mkOption {
+      type = lib.types.port;
+      description = "The port (on host) that status will be served";
+      default = 5008;
+      example = 5008;
+    };
+
+    staggering = lib.mkOption {
+      type = lib.types.int;
+      description = "Staggering in seconds";
+      default = 600;
+      example = 600;  # 10 minutes
+    };
   };
 
   config = lib.mkIf cfg.enable {
@@ -65,12 +79,14 @@ in {
           ${pkgs.python3Packages.chiafan-workforce}/bin/chiafan \
                ${lib.strings.concatMapStrings (x: "--worker " + x + " ") cfg.workers} \
               --farm_key ${cfg.farmKey} \
-              --pool_key ${cfg.poolKey}
+              --pool_key ${cfg.poolKey} \
+              --port ${cfg.port} \
+              --staggering ${cfg.staggering}
         '';
       };
     };
 
     # TODO(breakds): Let user specify port
-    networking.firewall.allowedTCPPorts = [ 5000 ];
+    networking.firewall.allowedTCPPorts = [ cfg.port ];
   };
 }
