@@ -80,8 +80,8 @@ in {
                ${lib.strings.concatMapStrings (x: "--worker " + x + " ") cfg.workers} \
               --farm_key ${cfg.farmKey} \
               --pool_key ${cfg.poolKey} \
-              --port ${cfg.port} \
-              --staggering ${cfg.staggering}
+              --port ${toString cfg.port} \
+              --staggering ${toString cfg.staggering}
         '';
       };
     };
