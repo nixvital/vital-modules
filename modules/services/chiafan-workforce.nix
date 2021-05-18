@@ -53,6 +53,15 @@ in {
       default = 600;
       example = 600;  # 10 minutes
     };
+
+    forwardConcurrency = lib.mkOption {
+      type = lib.types.int;
+      description = ''
+        Specify the max number of CPUs to use for the stage 1 (Forward) of the plotting.
+      '';
+      default = 4;
+      example = 4;  # 10 minutes
+    };
   };
 
   config = lib.mkIf cfg.enable {
@@ -81,7 +90,8 @@ in {
               --farm_key ${cfg.farmKey} \
               --pool_key ${cfg.poolKey} \
               --port ${toString cfg.port} \
-              --staggering ${toString cfg.staggering}
+              --staggering ${toString cfg.staggering} \
+              --forward_concurrency ${toString cfg.forwardConcurrency}
         '';
       };
     };
