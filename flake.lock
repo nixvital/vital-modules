@@ -45,11 +45,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1621360858,
-        "narHash": "sha256-QFdTUeb8HYM8d1vhYjE4GCyeywo/McVnT5sC0WkvcZc=",
+        "lastModified": 1621363727,
+        "narHash": "sha256-CXx5vkYYVhGsjKvus8lwtqDZ12THuM64akQxFrAhKxg=",
         "owner": "nixvital",
         "repo": "vitalpkgs",
-        "rev": "248450fd579870afda3863d52b0bc992d92034d5",
+        "rev": "a43d6de4b9b7b99c3e2090335a7a66dd3640c402",
         "type": "github"
       },
       "original": {
