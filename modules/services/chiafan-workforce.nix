@@ -62,6 +62,17 @@ in {
       default = 4;
       example = 4;  # 10 minutes
     };
+
+    useChiabox = lib.mkOption {
+      type = lib.types.bool;
+      description = ''
+        If set to false, it will use the native chia instead of chiabox (in the docker).
+
+        In the newer version is recommend to use the native chia, so default to false.
+      '';
+      default = false;
+      example = false;
+    };
   };
 
   config = lib.mkIf cfg.enable {
@@ -86,7 +97,8 @@ in {
         Type = "simple";
         ExecStart = ''
           ${pkgs.python3Packages.chiafan-workforce}/bin/chiafan \
-               ${lib.strings.concatMapStrings (x: "--worker " + x + " ") cfg.workers} \
+              ${lib.strings.concatMapStrings (x: "--worker " + x + " ") cfg.workers} \
+              --use_chiabox ${toString (if cfg.useChiabox then 1 else 0)}
               --farm_key ${cfg.farmKey} \
               --pool_key ${cfg.poolKey} \
               --port ${toString cfg.port} \
