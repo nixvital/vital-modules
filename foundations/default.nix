@@ -24,6 +24,8 @@
     ../modules/services/chia-blockchain.nix
     ../modules/services/chiafan-workforce.nix
     ../modules/services/chiafan-monitor.nix
+    ../modules/services/iscsi-target.nix
+    ../modules/services/iscsid.nix
   ];
 
   # +------------------------------------------------------------+
