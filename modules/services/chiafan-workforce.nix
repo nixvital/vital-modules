@@ -78,8 +78,8 @@ in {
   config = lib.mkIf cfg.enable {
     assertions = [
       {
-        assertion = config.vital.services.chia-blockchain.enable;
-        message = "chiafan workforce service requires chia-blockchain enabled.";
+        assertion = (!cfg.useChiabox) || config.vital.services.chia-blockchain.enable;
+        message = "If useChiabox is set to true, you need chia-blockchain service.";
       }
     ];
 
