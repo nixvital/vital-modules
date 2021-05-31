@@ -3,16 +3,23 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-20.09";
+
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs?rev=f924460e91cba6473c5dc4b8ccb1a1cfc05bc2d7";
     
     # Use vitalpkgs, with the same nixpkgs
     vitalpkgs.url = "github:nixvital/vitalpkgs";
     vitalpkgs.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, vitalpkgs, ... }: let
+  outputs = { self, nixpkgs, nixpkgs-unstable, vitalpkgs, ... }: let
     withVitalpkgs = module : {config, lib, pkgs, ...} : {
       imports = [ module ];
-      nixpkgs.overlays = [ vitalpkgs.overlay ];
+      nixpkgs.overlays = [
+        vitalpkgs.overlay
+        (final: prev: {
+          chia = nixpkgs-unstable.legacyPackages."${prev.system}".chia;
+        })
+      ];
     };
 
   in {
