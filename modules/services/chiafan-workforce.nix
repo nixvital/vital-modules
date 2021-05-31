@@ -99,7 +99,7 @@ in {
         ExecStart = ''
           ${pkgs.python3Packages.chiafan-workforce}/bin/chiafan \
               ${lib.strings.concatMapStrings (x: "--worker " + x + " ") cfg.workers} \
-              --use_chiabox ${toString (if cfg.useChiabox then 1 else 0)}
+              --use_chiabox ${toString (if cfg.useChiabox then 1 else 0)} \
               --farm_key ${cfg.farmKey} \
               --pool_key ${cfg.poolKey} \
               --port ${toString cfg.port} \
