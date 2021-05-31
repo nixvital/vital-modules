@@ -89,6 +89,7 @@ in {
       wantedBy = [ "multi-user.target" ];
       path = with pkgs; [
         utillinux
+        chia
         docker
         awscli2
       ];
@@ -110,5 +111,9 @@ in {
 
     # TODO(breakds): Let user specify port
     networking.firewall.allowedTCPPorts = [ cfg.port ];
+
+    # You will likely need to directly call chia as well if you need
+    # chiafan-workforce.
+    environment.systemPackages = with pkgs; [ chia ];
   };
 }
