@@ -35,7 +35,7 @@
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
     # Filesystem Support    
-    supportedFilesystems = [ "zfs" "ntfs" ];
+    supportedFilesystems = [ "ntfs" ];
   };
   
   # +------------------------------------------------------------+
