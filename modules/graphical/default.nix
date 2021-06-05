@@ -56,7 +56,7 @@ in {
 
     # Disable the gnome shell as it is not currently used, and will appear
     # in the dmenu so that hinder how chrome is being launched.
-    services.gnome3.chrome-gnome-shell.enable = false;
+    services.gnome.chrome-gnome-shell.enable = false;
 
     services.xserver = {
       enable = true;
@@ -69,9 +69,9 @@ in {
       # Enable touchpad support
       libinput.enable = true;
 
-      # Default desktop manager: gnome3.
-      desktopManager.gnome3.enable = true;
-      desktopManager.gnome3.extraGSettingsOverrides = ''
+      # Default desktop manager: gnome.
+      desktopManager.gnome.enable = true;
+      desktopManager.gnome.extraGSettingsOverrides = ''
         [org.gnome.desktop.peripherals.touchpad]
         click-method='default'
       '';
