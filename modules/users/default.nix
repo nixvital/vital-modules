@@ -40,12 +40,14 @@ in {
 
         # TODO(breakds): Move the other extra users to their own modules.
         fcgi = {
+          isSystemUser = true;
           group = "fcgi";
 	        extraGroups = [ "fcgi" "git" ];
 	        uid = 500;
         };
 
         nginx = {
+          isSystemUser = true;          
           group = "nginx";
           extraGroups = [ "nginx" ];
           uid = 60;
