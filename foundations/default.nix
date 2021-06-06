@@ -95,15 +95,6 @@
   services.blueman.enable = true;
 
   # +------------------------------------------------------------+
-  # | Garbage Collection                                         |
-  # +------------------------------------------------------------+
-
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-  };
-
-  # +------------------------------------------------------------+
   # | System files                                               |
   # +------------------------------------------------------------+
 
@@ -113,13 +104,24 @@
   };
 
   # +------------------------------------------------------------+
-  # | Enable Flakes                                              |
+  # | NIX Configuration                                          |
   # +------------------------------------------------------------+
 
   nix = {
+    # The following is to enable Nix Flakes
     package = pkgs.nixFlakes;
     extraOptions = ''
-        experimental-features = nix-command flakes
-      '';
+      experimental-features = nix-command flakes
+    '';
+
+    # Automatically optimize storage spaces /nix/store
+    autoOptimiseStore = true;
+
+    # Automatic garbage collection
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 120d";
+    };
   };
 }
