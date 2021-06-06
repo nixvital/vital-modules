@@ -54,9 +54,9 @@ in {
       audacious audacity zoom-us thunderbird
     ];
 
-    # Disable the gnome shell as it is not currently used, and will appear
+    # Disable the gnome3 shell as it is not currently used, and will appear
     # in the dmenu so that hinder how chrome is being launched.
-    services.gnome.chrome-gnome-shell.enable = false;
+    services.gnome3.chrome-gnome-shell.enable = false;
 
     services.xserver = {
       enable = true;
@@ -70,8 +70,8 @@ in {
       libinput.enable = true;
 
       # Default desktop manager: gnome.
-      desktopManager.gnome.enable = true;
-      desktopManager.gnome.extraGSettingsOverrides = ''
+      desktopManager.gnome3.enable = true;
+      desktopManager.gnome3.extraGSettingsOverrides = ''
         [org.gnome.desktop.peripherals.touchpad]
         click-method='default'
       '';
