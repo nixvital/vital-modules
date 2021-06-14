@@ -118,8 +118,12 @@ in {
     i18n = {
       # Input Method
       inputMethod = {
-        enabled = "fcitx";
-        fcitx.engines = with pkgs.fcitx-engines; [ cloudpinyin ];
+        enabled = "fcitx5";
+        fcitx5.addons = [
+          "fcitx5-chinese-addons"
+          "fcitx5-gtk"
+          "fcitx5-qt"
+        ];
       };
     };
 
