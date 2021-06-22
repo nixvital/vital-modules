@@ -18,6 +18,7 @@
     vital.games.steam.enable = true;
 
     vital.programs.vscode.enable = true;
+    vital.programs.arduino.enable = true;
 
     services.nginx.enable = true;
     security.acme = {

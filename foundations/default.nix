@@ -16,6 +16,7 @@
     ../modules/pre-installed.nix
     ../modules/vm.nix
     ../modules/dev/vscode.nix
+    ../modules/dev/arduino.nix
     
     # (nixvital wrapped) Services
     ../modules/services/docker-registry.nix
