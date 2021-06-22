@@ -17,6 +17,7 @@
     ../modules/vm.nix
     ../modules/dev/vscode.nix
     ../modules/dev/arduino.nix
+    ../modules/dev/texlive.nix
     
     # (nixvital wrapped) Services
     ../modules/services/docker-registry.nix
