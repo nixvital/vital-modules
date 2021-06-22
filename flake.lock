@@ -79,11 +79,11 @@
         "nixpkgs-unstable": "nixpkgs-unstable_2"
       },
       "locked": {
-        "lastModified": 1622488457,
-        "narHash": "sha256-t+ymFpkMMmS8epZ4/NQeWNG2RmeY1A8yYERAovJOEjs=",
+        "lastModified": 1624379137,
+        "narHash": "sha256-7PHIkXDQyshOZ2ZWAIIPU61MyimUwepQ7LO5z7SNP2o=",
         "owner": "nixvital",
         "repo": "vitalpkgs",
-        "rev": "e6234eca28d1706f739465da6297cd8cd5c2eb9f",
+        "rev": "90396203572cace08be4353d0c59f1b29427120e",
         "type": "github"
       },
       "original": {
