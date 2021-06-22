@@ -29,6 +29,7 @@ let cfg = config.vital.graphical;
 in {
   imports = [
     ./nvidia.nix
+    ./cjk.nix
     ./remote-desktop.nix
   ];
   
@@ -112,18 +113,6 @@ in {
     console = {
       packages = [ pkgs.wqy_microhei pkgs.terminus_font  ];
       font = "ter-132n";
-    };
-
-    # TODO(breakds): Add another module (maybe CJK.nix) for this.
-    i18n = {
-      # Input Method
-      inputMethod = {
-        enabled = "fcitx5";
-        fcitx5.addons = with pkgs; [
-          fcitx5-chinese-addons
-          fcitx5-gtk
-        ];
-      };
     };
 
     hardware.opengl.setLdLibraryPath = true;
