@@ -20,6 +20,7 @@
     vital.programs.vscode.enable = true;
     vital.programs.arduino.enable = true;
     vital.programs.texlive.enable = true;
+    vital.programs.modern-utils.enable = true;
 
     services.nginx.enable = true;
     security.acme = {
