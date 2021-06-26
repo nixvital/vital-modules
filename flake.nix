@@ -39,11 +39,36 @@
       iphone-connect = import ./modules/addons/iphone-connect.nix;
     };
 
-    nixosConfigurations.test-vm = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = let
-        test-vm = withVitalpkgs (import ./machines/test-vm.nix);
-      in [ test-vm ];
+    nixosConfigurations = {
+      # The live cd iso can be built with
+      #
+      # GC_DONT_GC=1 nix build .#nixosConfigurations.livecd.config.system.build.isoImage
+      livecd = nixpkgs.lib.nixosSystem rec {
+        system = "x86_64-linux";
+        modules = [
+          "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-graphical-gnome.nix"
+          {
+            nix = {
+              package = nixpkgs.legacyPackages."${system}".nixFlakes;
+              extraOptions = ''
+                experimental-features = nix-command flakes
+              '';
+            };
+          }
+        ];
+      };
+
+      # Run
+      #
+      # nixos-rebuild build-vm .#test-vm
+      #
+      # to test the build
+      test-vm = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = let
+          test-vm = withVitalpkgs (import ./machines/test-vm.nix);
+        in [ test-vm ];
+      };
     };
   };
 }
