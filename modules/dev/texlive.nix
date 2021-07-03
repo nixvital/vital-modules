@@ -6,7 +6,7 @@ let cfg = config.vital.programs.texlive;
       inherit (pkgs.texlive) collection-basic collection-latex collection-latexextra
         collection-latexrecommended collection-fontsrecommended collection-langchinese
         collection-langcjk collection-metapost collection-bibtexextra
-        newlfm;
+        newlfm dvipng;
     };
 
 in {
