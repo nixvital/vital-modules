@@ -19,6 +19,7 @@
     ../modules/dev/arduino.nix
     ../modules/dev/texlive.nix
     ../modules/dev/modern-utils.nix
+    ../modules/dev/accounting.nix
     
     # (nixvital wrapped) Services
     ../modules/services/docker-registry.nix
