@@ -4,7 +4,8 @@
 let
   extensions = (with pkgs.vscode-extensions; [
     bbenoist.Nix
-    ms-vscode-remote.remote-ssh    
+    ms-vscode-remote.remote-ssh
+    ms-python.python
   ]) ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
     {
       name = "vscode-icons";
@@ -45,7 +46,7 @@ let
       sha256 = "0rlja1hn2n6fyq673qskz2a69rz8b0i5g5flyxm5sfi8bcz8ms05";
     }
   ];
-  
+
   customized-vscode = pkgs.vscode-with-extensions.override {
     vscodeExtensions = extensions;
   };
