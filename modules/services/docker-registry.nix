@@ -21,7 +21,7 @@ in {
     };
   };
 
-  config = {
+  config = lib.mkIf cfg.enable {
     services.dockerRegistry = {
       enable = true;
       # Do not enable redis cache for simplicity.
