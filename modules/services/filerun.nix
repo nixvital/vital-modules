@@ -7,27 +7,27 @@ in {
 
   options.vital.services.filerun = {
     enable = lib.mkEnableOption "Enable the filerun service.";
-    
+
     workDir = lib.mkOption {
       type = lib.types.str;
       description = ''
-        The directory where file run operates. 
+        The directory where file run operates.
 
         This includes the following subdirectories:
           1. web - for filerun to generate the static html/php files
           2. db - MariaDB's operating directory
           3. Other directories that will be generated based on vital.services.filerun.userDataDirs
       '';
-      default = "/home/${config.vital.mainUser}/filerun";
-      example = "/home/${config.vital.mainUser}/filerun";
+      default = "/var/lib/filerun";
+      example = "/var/lib/filerun";
     };
-    
+
     port = lib.mkOption {
       type = lib.types.port;
       description = "The port (on host) that filerun will be served on.";
       default = 5962;
     };
-    
+
     extraUserData = lib.mkOption {
       type = with lib.types; listOf str;
       default = [];
@@ -39,7 +39,7 @@ in {
         [ "breakds-files" ]
       '';
     };
-    
+
     domain = lib.mkOption {
       type = lib.types.str;
       description = "The domain to configure nginx for this service.";
@@ -70,7 +70,7 @@ in {
     in {
       # Note that both containers will be put in the same user defined
       # (bridge) network.
-      
+
       # The database (MariaDB)
       virtualisation.oci-containers.containers."${dbContainerName}" = {
         image = "mariadb:10.1";
@@ -113,7 +113,7 @@ in {
         description = "Create the network bridge ${bridgeNetworkName} for filerun.";
         after = [ "network.target" ];
         wantedBy = [ "multi-user.target" ];
-        
+
         serviceConfig.Type = "oneshot";
 
         script = let dockercli = "${config.virtualisation.docker.package}/bin/docker";
@@ -128,6 +128,13 @@ in {
                    fi
                  '';
       };
+
+      systemd.tmpfiles.rules = [
+        "d ${cfg.workDir} 775 delegator delegator -"
+        "d ${cfg.workDir}/db 775 delegator delegator -"
+        "d ${cfg.workDir}/web 775 delegator delegator -"
+        "d ${cfg.workDir}/user-files 775 delegator delegator -"
+      ];
 
       # The nginx configuration to expose it if nginx is enabled.
       services.nginx.virtualHosts = lib.mkIf config.services.nginx.enable {
