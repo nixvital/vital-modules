@@ -36,7 +36,7 @@
   # +------------------------------------------------------------+
 
   boot = {
-    loader.systemd-boot.enable = true;
+    loader.systemd-boot.enable = lib.mkDefault true;
     loader.efi.canTouchEfiVariables = lib.mkDefault true;
     # Filesystem Support    
     supportedFilesystems = [ "ntfs" ];
