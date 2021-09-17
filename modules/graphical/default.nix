@@ -72,27 +72,20 @@ in {
         click-method='default'
       '';
 
-      # Special Session managed by Home Manager.
-      # This is how I get display manager recognize my customized i3.
-      #
-      # TODO(breakds): Make this private to my machines
-      # 
-      # desktopManager.session = [
-      #   {
-      #     name = "home-manager";
-      #     start = ''
-      #       ${pkgs.runtimeShell} $HOME/.hm-xsession &
-      #       waitPID=$!
-      #     '';
-      #   }
-      # ];
-      
       displayManager.gdm.enable = cfg.xserver.displayManager == "gdm";
       # When using gdm, do not automatically suspend since we want to
       # keep the server running.
       displayManager.gdm.autoSuspend = false;
       displayManager.sddm.enable = cfg.xserver.displayManager == "sddm";
     };
+
+    # Exclude some of the gnome3 packages
+    programs.geary.enable = false;    
+    environment.gnome3.excludePackages = with pkgs.gnome3; [
+      epiphany
+      gnome-software
+      gnome-characters
+    ];
 
     # Font
     fonts.fonts = with pkgs; [
