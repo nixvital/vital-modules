@@ -23,6 +23,11 @@
     };
 
   in {
+    # This is to enable building the livecd iso with `nix build .#livecd`
+    packages."x86_64-linux" = {
+      livecd = self.nixosConfigurations.livecd.config.system.build.isoImage;
+    };
+    
     nixosModules = {
       # Import this so that you have a backbone that you can build
       # your machine up on.
