@@ -82,7 +82,7 @@ in {
 
     # Exclude some of the gnome3 packages
     programs.geary.enable = false;    
-    environment.gnome3.excludePackages = with pkgs.gnome3; [
+    environment.gnome.excludePackages = with pkgs.gnome3; [
       epiphany
       gnome-software
       gnome-characters

@@ -67,6 +67,14 @@
           test-vm = withVitalpkgs (import ./machines/test-vm.nix);
         in [ test-vm ];
       };
+
+      test-container = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./foundations/container.nix
+          ./machines/test-container.nix
+        ];
+      };
     };
   };
 }
