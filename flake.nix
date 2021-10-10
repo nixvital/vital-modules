@@ -32,7 +32,7 @@
       # Import this so that you have a backbone that you can build
       # your machine up on.
       foundation = withVitalpkgs (import ./foundations);
-      countainer-foundation = withVitalpkgs (import ./foundations/container.nix);
+      container-foundation = withVitalpkgs (import ./foundations/container.nix);
       
       # Individual Modules
       graphical = import ./modules/graphical;
