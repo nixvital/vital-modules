@@ -35,7 +35,7 @@ in {
         List of extra user data directories under vital.services.filerun.workDir.
         TODO(breakds): Make this more complete.
       '';
-      example = lib.literalExample ''
+      example = lib.literalExpression ''
         [ "breakds-files" ]
       '';
     };
