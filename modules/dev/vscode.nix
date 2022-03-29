@@ -3,9 +3,9 @@
 
 let
   extensions = (with pkgs.vscode-extensions; [
-    bbenoist.nix
     ms-vscode-remote.remote-ssh
     ms-python.python
+    ms-toolsai.jupyter
   ]) ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
     {
       name = "vscode-icons";
