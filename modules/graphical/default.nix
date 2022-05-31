@@ -95,7 +95,7 @@ in {
       # Fira code is a good font for coding
       fira-code
       fira-code-symbols
-      font-awesome-ttf
+      font-awesome
       inconsolata
     ];
 
