@@ -34,7 +34,7 @@ let cfg = config.vital.games.steam;
           glib
           atk
           cairo
-          gdk_pixbuf
+          gdk-pixbuf
           pango
           fontconfig
           xorg.libxcb
