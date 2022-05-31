@@ -28,7 +28,6 @@ let cfg = config.vital.games.steam;
           openldap
           xorg.xrandr
           xorg.xinput
-          gnome3.gtk
           zlib
           dbus
           freetype
