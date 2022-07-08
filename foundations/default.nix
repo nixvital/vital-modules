@@ -20,7 +20,8 @@
     ../modules/dev/texlive.nix
     ../modules/dev/modern-utils.nix
     ../modules/dev/accounting.nix
-    
+    ../modules/dev/machine-learning.nix
+
     # (nixvital wrapped) Services
     ../modules/services/docker-registry.nix
     ../modules/services/filerun.nix
@@ -38,10 +39,10 @@
   boot = {
     loader.systemd-boot.enable = lib.mkDefault true;
     loader.efi.canTouchEfiVariables = lib.mkDefault true;
-    # Filesystem Support    
+    # Filesystem Support
     supportedFilesystems = [ "ntfs" ];
   };
-  
+
   # +------------------------------------------------------------+
   # | Default Settings                                           |
   # +------------------------------------------------------------+
