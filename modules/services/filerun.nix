@@ -105,6 +105,7 @@ in {
           "${cfg.workDir}/user-files:/user-files"
         ] ++ lib.lists.map (x: "${cfg.workDir}/${x}:/${x}") cfg.extraUserData;
         extraOptions = [ "--network=${bridgeNetworkName}" ];
+        dependsOn = [ dbContainerName ];
       };
 
       # This is an one-shot systemd service to make sure that the
