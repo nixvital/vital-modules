@@ -86,7 +86,7 @@ in {
 
       # The backend and web app (Filerun)
       virtualisation.oci-containers.containers."filerun" = {
-        image = "afian/filerun";
+        image = "filerun/filerun";
         environment = {
           "FR_DB_HOST" = "${dbContainerHost}";
           # This is the default port that mariadb runs at.
@@ -103,7 +103,7 @@ in {
         volumes = [
           "${cfg.workDir}/web:/var/www/html"
           "${cfg.workDir}/user-files:/user-files"
-        ] ++ lib.lists.map (x: "${cfg.workDir}/${x}:/${x}") cfg.extraUserData;
+        ] ++ lib.lists.map (x: "${cfg.workDir}/${x}:/user-files/other/${x}") cfg.extraUserData;
         extraOptions = [ "--network=${bridgeNetworkName}" ];
         dependsOn = [ dbContainerName ];
       };
@@ -135,7 +135,9 @@ in {
         "d ${cfg.workDir}/db 775 delegator delegator -"
         "d ${cfg.workDir}/web 775 delegator delegator -"
         "d ${cfg.workDir}/user-files 775 delegator delegator -"
-      ];
+      ] ++ (lib.lists.map
+        (x: "d ${cfg.workDir}/user-files/other/${x} 755 delegator delegator -")
+        cfg.extraUserData);
 
       # The nginx configuration to expose it if nginx is enabled.
       services.nginx.virtualHosts = lib.mkIf config.services.nginx.enable {
