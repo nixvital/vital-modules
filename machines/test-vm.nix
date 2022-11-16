@@ -4,7 +4,7 @@
   imports = [
     ../foundations
     ../modules/addons/docker.nix
-    ../modules/addons/laptop-lids.nix
+    ../modules/addons/laptop.nix
     ../modules/addons/iphone-connect.nix
   ];
 

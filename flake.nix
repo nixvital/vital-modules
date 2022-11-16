@@ -45,7 +45,7 @@
 
       # - Add-on modules
       docker = import ./modules/addons/docker.nix;
-      laptop-lids = import ./modules/addons/laptop-lids.nix;
+      laptop = import ./modules/addons/laptop.nix;
       iphone-connect = import ./modules/addons/iphone-connect.nix;
     };
 
