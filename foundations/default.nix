@@ -59,9 +59,6 @@
 
   programs.ssh.startAgent = lib.mkDefault false;
 
-  # For monitoring and inspecting the system.
-  programs.sysdig.enable = true;
-
   # Enable the OpenSSH daemon.
   services.openssh = {
     enable = true;
