@@ -2,7 +2,7 @@
   description = "A collection of NixOS modules serving as building blocks to construct NixOS configurations";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.11";
 
     nixpkgs-unstable.url = "github:NixOS/nixpkgs?rev=f924460e91cba6473c5dc4b8ccb1a1cfc05bc2d7";
     
@@ -10,7 +10,7 @@
     vitalpkgs.url = "github:nixvital/vitalpkgs";
     vitalpkgs.inputs.nixpkgs.follows = "nixpkgs";
 
-    ml-pkgs.url = "github:nixvital/ml-pkgs";
+    ml-pkgs.url = "github:nixvital/ml-pkgs/dev/22.11";
     ml-pkgs.inputs.nixpkgs.follows = "nixpkgs";
   };
 
