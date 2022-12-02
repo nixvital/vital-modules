@@ -118,7 +118,7 @@
 
     # Automatically optimize storage spaces /nix/store
     settings = {
-      autoOptimiseStore = true;
+      auto-optimise-store = true;
     };
 
     # Automatic garbage collection
