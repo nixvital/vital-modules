@@ -9,19 +9,15 @@
     # Use vitalpkgs, with the same nixpkgs
     vitalpkgs.url = "github:nixvital/vitalpkgs";
     vitalpkgs.inputs.nixpkgs.follows = "nixpkgs";
-
-    ml-pkgs.url = "github:nixvital/ml-pkgs/dev/22.11";
-    ml-pkgs.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, vitalpkgs, ml-pkgs, ... }: let
+  outputs = { self, nixpkgs, nixpkgs-unstable, vitalpkgs, ... }: let
     withVitalpkgs = module : {config, lib, pkgs, ...} : {
       imports = [ module ];
       nixpkgs.overlays = [
         vitalpkgs.overlay
         (final: prev: {
           chia = nixpkgs-unstable.legacyPackages."${prev.system}".chia;
-          nvitop = ml-pkgs.packages."${prev.system}".nvitop;
         })
       ];
     };
