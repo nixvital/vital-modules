@@ -29,10 +29,10 @@
       email = "sample@example.com";
     };
 
-    vital.services.filerun = {
-      enable = true;
-      domain = "filerun.example.com";
-    };
+    # vital.services.filerun = {
+    #   enable = true;
+    #   domain = "filerun.example.com";
+    # };
 
     vital.services.gitea = {
       enable = true;

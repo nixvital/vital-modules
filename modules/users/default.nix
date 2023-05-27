@@ -54,7 +54,6 @@ in {
         };
 
         git = {
-          isNormalUser = true;
           group = "git";
           extraGroups = [ "git" "fcgi" "gitea" ];
           uid = 510;

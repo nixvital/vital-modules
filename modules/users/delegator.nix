@@ -9,7 +9,6 @@
 {
   users = {
     extraUsers.delegator = {
-      isNormalUser = true;
       group = "delegator";
       createHome = true;
       uid = 600;
