@@ -3,8 +3,6 @@
 let cfg = config.vital.games.steam;
 
     customized-steam = pkgs.steam.override {
-      # Use nixos libraries instead of steam-provided
-      withJava = true;
       # TODO(breakds): Figure out what are the actual necessary libraries.
       extraPkgs = p: with pkgs;
         let xorgdeps = with xorg; [

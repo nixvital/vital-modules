@@ -25,7 +25,7 @@ let cfg = config.vital.graphical;
 in {
   imports = [
     ./nvidia.nix
-    # ./cjk.nix
+    ./cjk.nix
     ./remote-desktop.nix
   ];
   
