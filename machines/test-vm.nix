@@ -29,7 +29,6 @@
       email = "sample@example.com";
     };
 
-    vital.services.docker-registry.enable = true;
     vital.services.filerun = {
       enable = true;
       domain = "filerun.example.com";
@@ -41,10 +40,6 @@
       port = 5965;
     };
 
-    vital.services.chia-blockchain = {
-      enable = true;
-    };
-    
     networking.hostName = "testvm";
     networking.hostId = "4ca9a368";
   };

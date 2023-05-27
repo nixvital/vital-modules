@@ -23,12 +23,8 @@
     ../modules/dev/machine-learning.nix
 
     # (nixvital wrapped) Services
-    ../modules/services/docker-registry.nix
     ../modules/services/filerun.nix
     ../modules/services/gitea.nix
-    ../modules/services/chia-blockchain.nix
-    ../modules/services/chiafan-workforce.nix
-    ../modules/services/chiafan-monitor.nix
     ../modules/services/iscsid.nix
   ];
 
