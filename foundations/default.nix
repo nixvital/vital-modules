@@ -59,7 +59,7 @@
   services.openssh = {
     enable = true;
     # Enable X11 Fowarding, can be connected with ssh -Y.
-    settings.forwardX11 = true;
+    settings.X11Forwarding = true;
     # TODO(breakds): Enable this for servers
     # allowSFTP = config.vital.machineType == "server";
   };
