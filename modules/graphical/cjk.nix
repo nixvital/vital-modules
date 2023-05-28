@@ -12,12 +12,11 @@
     };
   };
 
-  # Manually add the systemd service before the following fix is
-  # backported to 21.05 branch.
+  # Manually add the systemd service.
   #
-  # https://github.com/NixOS/nixpkgs/commit/195b26b95e2ae8a0c9ee7cb9c1e3d9faf6222d03#diff-8860fb43dd14113fb11b560f06eae265ae29247e8e2bfcaf4981ab1ccbedb24b
+  # See https://github.com/NixOS/nixpkgs/commit/195b26b95e2ae8a0c9ee7cb9c1e3d9faf6222d03#diff-8860fb43dd14113fb11b560f06eae265ae29247e8e2bfcaf4981ab1ccbedb24b
   #
-  # TODO(breakds): Remove this after the fix is backported.
+  # Somehow this never gets merged.
 
   systemd.user.services.fcitx5-daemon = {
     enable = true;
