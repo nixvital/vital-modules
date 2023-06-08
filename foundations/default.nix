@@ -93,15 +93,6 @@
   services.blueman.enable = true;
 
   # +------------------------------------------------------------+
-  # | System files                                               |
-  # +------------------------------------------------------------+
-
-  environment.etc = {
-    "bashrc.local".source = ../data/dotfiles/bashrc.local;
-    "inputrc".source = ../data/dotfiles/inputrc;
-  };
-
-  # +------------------------------------------------------------+
   # | NIX Configuration                                          |
   # +------------------------------------------------------------+
 
