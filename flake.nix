@@ -16,9 +16,6 @@
       graphical = import ./modules/graphical;
       users = import ./modules/users;
       steam = import ./modules/games/steam.nix;
-
-      # - Add-on modules
-      docker = import ./modules/addons/docker.nix;
     };
 
     nixosConfigurations = {
