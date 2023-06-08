@@ -13,8 +13,6 @@
 
     vital.pre-installed.level = 5;
     
-    vital.games.steam.enable = true;
-
     vital.programs.vscode.enable = true;
     vital.programs.arduino.enable = true;
     vital.programs.texlive.enable = true;

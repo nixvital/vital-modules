@@ -14,7 +14,6 @@
       # Individual Modules
       graphical = import ./modules/graphical;
       users = import ./modules/users;
-      steam = import ./modules/games/steam.nix;
     };
 
     nixosConfigurations = {
