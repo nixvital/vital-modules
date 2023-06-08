@@ -20,7 +20,6 @@
       # - Add-on modules
       docker = import ./modules/addons/docker.nix;
       laptop = import ./modules/addons/laptop.nix;
-      iphone-connect = import ./modules/addons/iphone-connect.nix;
     };
 
     nixosConfigurations = {
