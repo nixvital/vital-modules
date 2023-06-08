@@ -3,13 +3,9 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.05";
-
-    # Use vitalpkgs, with the same nixpkgs
-    vitalpkgs.url = "github:nixvital/vitalpkgs";
-    vitalpkgs.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, vitalpkgs, ... }: {
+  outputs = { self, nixpkgs, ... }: {
     # This is to enable building the livecd iso with `nix build .#livecd`
     packages."x86_64-linux" = {
       livecd = self.nixosConfigurations.livecd.config.system.build.isoImage;
