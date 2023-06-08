@@ -19,7 +19,6 @@
     ../modules/dev/texlive.nix
     ../modules/dev/modern-utils.nix
     ../modules/dev/accounting.nix
-    ../modules/dev/machine-learning.nix
 
     # (nixvital wrapped) Services
     ../modules/services/filerun.nix
