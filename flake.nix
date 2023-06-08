@@ -10,7 +10,6 @@
       # Import this so that you have a backbone that you can build
       # your machine up on.
       foundation = import ./foundations;
-      container-foundation = import ./foundations/container.nix;
       
       # Individual Modules
       graphical = import ./modules/graphical;
@@ -28,14 +27,6 @@
         system = "x86_64-linux";
         modules = [
           ./machines/test-vm.nix
-        ];
-      };
-
-      test-container = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          ./foundations/container.nix
-          ./machines/test-container.nix
         ];
       };
     };
