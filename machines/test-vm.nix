@@ -4,7 +4,6 @@
   imports = [
     ../foundations
     ../modules/addons/docker.nix
-    ../modules/addons/laptop.nix
   ];
 
   config = {

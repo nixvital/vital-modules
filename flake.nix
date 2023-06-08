@@ -19,7 +19,6 @@
 
       # - Add-on modules
       docker = import ./modules/addons/docker.nix;
-      laptop = import ./modules/addons/laptop.nix;
     };
 
     nixosConfigurations = {
