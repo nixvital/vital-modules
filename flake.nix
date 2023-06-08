@@ -6,11 +6,6 @@
   };
 
   outputs = { self, nixpkgs, ... }: {
-    # This is to enable building the livecd iso with `nix build .#livecd`
-    packages."x86_64-linux" = {
-      livecd = self.nixosConfigurations.livecd.config.system.build.isoImage;
-    };
-    
     nixosModules = {
       # Import this so that you have a backbone that you can build
       # your machine up on.
@@ -29,17 +24,6 @@
     };
 
     nixosConfigurations = {
-      # The live cd iso can be built with
-      #
-      # GC_DONT_GC=1 nix build .#nixosConfigurations.livecd.config.system.build.isoImage
-      livecd = nixpkgs.lib.nixosSystem rec {
-        system = "x86_64-linux";
-        modules = [
-          "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-graphical-gnome.nix"
-          ./modules/livecd.nix
-        ];
-      };
-
       # Run
       #
       # nixos-rebuild build-vm .#test-vm
