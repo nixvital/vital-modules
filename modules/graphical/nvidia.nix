@@ -58,9 +58,5 @@ in {
       # Bus ID of the Intel GPU. You can find it using lspci
       nvidia.prime.intelBusId = cfg.prime.intelBusId;
     };
-
-    environment.systemPackages = lib.mkIf cfg.withCuda (with pkgs; [
-      cudatoolkit
-    ]);
   };
 }
