@@ -3,7 +3,6 @@
 {
   imports = [
     ../foundations
-    ../modules/addons/docker.nix
   ];
 
   config = {
