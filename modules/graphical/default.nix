@@ -82,17 +82,6 @@ in {
       gnome-characters
     ];
 
-    # Font
-    fonts.fonts = with pkgs; [
-      # Add Wenquanyi Microsoft Ya Hei, a nice-looking Chinese font.
-      wqy_microhei
-      # Fira code is a good font for coding
-      fira-code
-      fira-code-symbols
-      font-awesome
-      inconsolata
-    ];
-
     console = {
       packages = [ pkgs.wqy_microhei pkgs.terminus_font  ];
       font = "ter-132n";
