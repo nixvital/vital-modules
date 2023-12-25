@@ -61,9 +61,6 @@
     # allowSFTP = config.vital.machineType == "server";
   };
 
-  # Enable CUPS services
-  services.printing.enable = true;
-
   services.udev.packages = [ pkgs.libu2f-host ];
 
   # Disable UDisks by default (significantly reduces system closure size)
