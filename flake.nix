@@ -12,7 +12,6 @@
       foundation = import ./foundations;
       
       # Individual Modules
-      graphical = import ./modules/graphical;
       users = import ./modules/users;
     };
 

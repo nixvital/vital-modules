@@ -11,7 +11,6 @@
 
   imports = [
     ../modules/users
-    ../modules/graphical
     ../modules/pre-installed.nix
     ../modules/vm.nix
     ../modules/dev/vscode.nix
