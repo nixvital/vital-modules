@@ -46,7 +46,6 @@
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
-    pinentryFlavor = "tty";
   };
 
   programs.ssh.startAgent = lib.mkDefault false;
