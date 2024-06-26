@@ -74,7 +74,7 @@
     # Whether to enable the mDNS NSS (Name Service Switch) plugin.
     # Enabling this allows applications to resolve names in the
     # `.local` domain.
-    nssmdns = true;
+    nssmdns4 = true;
 
     # Whether to register mDNS address records for all local IP
     # addresses.
