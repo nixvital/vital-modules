@@ -86,6 +86,7 @@ in {
 
       # The backend and web app (Filerun)
       virtualisation.oci-containers.containers."filerun" = {
+        # TODO(breakds): Upgrade to 8.1 or whatever latest version is.
         image = "filerun/filerun:7.4";
         environment = {
           "FR_DB_HOST" = "${dbContainerHost}";
