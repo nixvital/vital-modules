@@ -86,7 +86,7 @@ in {
 
       # The backend and web app (Filerun)
       virtualisation.oci-containers.containers."filerun" = {
-        image = "filerun/filerun";
+        image = "filerun/filerun:8.1";
         environment = {
           "FR_DB_HOST" = "${dbContainerHost}";
           # This is the default port that mariadb runs at.
