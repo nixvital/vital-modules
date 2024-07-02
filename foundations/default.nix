@@ -45,7 +45,7 @@
   # TODO(breakds): Figure out how to use GPG.
   programs.gnupg.agent = {
     enable = true;
-    enableSSHSupport = true;
+    enableSSHSupport = lib.mkDefault true;
   };
 
   programs.ssh.startAgent = lib.mkDefault false;
