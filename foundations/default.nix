@@ -90,7 +90,6 @@
 
   nix = {
     # The following is to enable Nix Flakes
-    package = pkgs.nixFlakes;
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
