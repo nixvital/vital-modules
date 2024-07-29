@@ -89,10 +89,8 @@
   # +------------------------------------------------------------+
 
   nix = {
-    # The following is to enable Nix Flakes
-    extraOptions = ''
-      experimental-features = nix-command flakes
-    '';
+    package = pkgs.nix;
+    settings.experimental-features = [ "nix-command" "flakes" ];
 
     # Automatically optimize storage spaces /nix/store
     settings = {
