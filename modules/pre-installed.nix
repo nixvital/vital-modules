@@ -70,7 +70,6 @@ in {
   config = {
     environment.systemPackages = let
       filteredByLevel = builtins.filter (cand: cand.level <= cfg.level) preinstall-candidates;
-      filteredByGraphical = builtins.filter (cand: config.vital.graphical.enable || (!cand.requireGraphical)) filteredByLevel;
-    in map (cand: cand.pkg) filteredByGraphical;
+    in map (cand: cand.pkg) filteredByLevel;
   };
 }
