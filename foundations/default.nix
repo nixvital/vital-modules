@@ -41,7 +41,7 @@
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
-  programs.bash.enableCompletion = true;
+  programs.bash.completion.enable = true;
   # TODO(breakds): Figure out how to use GPG.
   programs.gnupg.agent = {
     enable = true;
