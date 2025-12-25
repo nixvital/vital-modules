@@ -9,14 +9,6 @@
   #     ../../modules/perf.nix
   #   ];
 
-  imports = [
-    ../modules/vm.nix
-
-    # (nixvital wrapped) Services
-    ../modules/services/gitea.nix
-    ../modules/services/iscsid.nix
-  ];
-
   # +------------------------------------------------------------+
   # | Boot Settings                                              |
   # +------------------------------------------------------------+
