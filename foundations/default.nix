@@ -11,7 +11,6 @@
 
   imports = [
     ../modules/vm.nix
-    ../modules/dev/texlive.nix
 
     # (nixvital wrapped) Services
     ../modules/services/gitea.nix
