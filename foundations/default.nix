@@ -11,7 +11,6 @@
 
   imports = [
     ../modules/vm.nix
-    ../modules/dev/vscode.nix
     ../modules/dev/texlive.nix
 
     # (nixvital wrapped) Services
