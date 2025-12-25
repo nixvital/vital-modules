@@ -15,7 +15,6 @@
     ../modules/dev/vscode.nix
     ../modules/dev/arduino.nix
     ../modules/dev/texlive.nix
-    ../modules/dev/modern-utils.nix
 
     # (nixvital wrapped) Services
     ../modules/services/filerun.nix
