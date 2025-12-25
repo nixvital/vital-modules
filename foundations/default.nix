@@ -16,7 +16,6 @@
     ../modules/dev/texlive.nix
 
     # (nixvital wrapped) Services
-    ../modules/services/filerun.nix
     ../modules/services/gitea.nix
     ../modules/services/iscsid.nix
   ];
