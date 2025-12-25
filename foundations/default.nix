@@ -10,7 +10,6 @@
   #   ];
 
   imports = [
-    ../modules/users
     ../modules/vm.nix
     ../modules/dev/vscode.nix
     ../modules/dev/arduino.nix
