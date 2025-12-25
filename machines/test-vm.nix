@@ -9,7 +9,6 @@
     vital.mainUser = "tester";
 
     vital.programs.vscode.enable = true;
-    vital.programs.arduino.enable = true;
     vital.programs.texlive.enable = true;
 
     services.nginx.enable = true;
